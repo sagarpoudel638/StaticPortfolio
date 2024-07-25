@@ -1,15 +1,28 @@
-body {
-    font-family: 'Arial', sans-serif;
+.grid-container {
+    display: grid;
+    grid-template-areas: "header header header "
+                         "contact education-section education-section "
+                         "footer footer footer";                   ;
+    gap: 5px;
+    background-color: #ffffff;
+    padding: 5px;
+  }
+  
+  .grid-container > header {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 10px 0;
     margin: 0;
-    padding: 0;
-    background-color: #f0f0f5;
-    color: #333;
-}
-
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
+    font-size: 30px;
+    width: 100%;
+  }
+  .contact {
+    grid-row: 2 / span 3;
+  } 
+  .container {
+    width:100%;
+    max-width: 1000px;
+    margin: 0 0;
     padding: 20px;
 }
 
@@ -19,15 +32,20 @@ header {
     color: white;
     padding: 50px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: fixed; 
-    width: 100%;
+    position:sticky; 
+    top: 0;
+    width: 100vw;
+    height: auto;
     transition: 0.2s;
+    margin:0 0 0 0;
+    grid-column: 1 /  span 3 ;
+    
 
 }
 
 header h1 {
     margin: 0;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 700;
 }
 
@@ -43,14 +61,15 @@ header .location {
     font-weight: 300;
 }
 
-
-
 .education-section {
     background-color: #ffffff;
-    padding: 300px 20px;
+    padding: 3px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: -30px;
     border-radius: 10px;
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 3;
+    
 }
 
 .education-section h2 {
@@ -61,6 +80,7 @@ header .location {
     border-bottom: 2px solid #4CAF50;
     display: inline-block;
     padding-bottom: 10px;
+    
 }
 
 .education {
@@ -71,6 +91,7 @@ header .location {
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
     transition: transform 1s ease-in-out;
 
 }
@@ -101,15 +122,7 @@ header .location {
     margin: 0;
 }
 
- /* @keyframes education-animation {
-    0%{background-color: #ffffff ; color: #000000;}
-    20%{background-color: #b7b7b7;color: #302f2f;}
-    50% {background-color: #393838;color: #dbd8d8;}
-    100% {background-color: #000000;color: #ffffff;}
-    
- } */
-
- @keyframes education-animation {
+@keyframes education-animation {
     0% {
         transform: scale(1) rotate(0deg);
     }
@@ -117,5 +130,3 @@ header .location {
         transform: scale(1.1) rotate(5deg);
     }
 }
-   
-
